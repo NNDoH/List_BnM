@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List_BnM</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>List_BnM</h1>
+      <p>책/영화를 Notion DB와 동기화하는 웹앱 MVP</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="search">Search</button>
+      <button class="tab" data-tab="list">List</button>
+    </nav>
+
+    <main>
+      <section id="search" class="panel active">
+        <div class="search-controls">
+          <select id="category">
+            <option value="book">책</option>
+            <option value="movie">영화</option>
+          </select>
+          <input id="query" placeholder="제목 검색" />
+          <button id="searchBtn">검색</button>
+        </div>
+        <p id="searchMessage" class="message"></p>
+        <div id="searchResults" class="grid"></div>
+      </section>
+
+      <section id="list" class="panel">
+        <div class="list-grid">
+          <article class="widget">
+            <h2>진행 중인 책</h2>
+            <div id="inProgressBook"></div>
+          </article>
+
+          <article class="widget">
+            <h2>최근 본 영화</h2>
+            <div id="latestMovie"></div>
+          </article>
+
+          <article class="widget">
+            <h2>랜덤 추천 (Not started 영화)</h2>
+            <button id="refreshRandom">새로고침</button>
+            <div id="randomMovie"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
